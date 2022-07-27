@@ -1,0 +1,7 @@
+content='[\
+    {\
+        "title": "My First Blog",\
+        "abstract": "This is my first blog. Click the title to enter.",\
+        "location": "posts/myfirstblog.md"\
+    }\
+]'

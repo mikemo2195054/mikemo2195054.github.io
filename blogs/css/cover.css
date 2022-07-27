@@ -1,0 +1,35 @@
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.title {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 5pt;
+    font-size: 20pt;
+}
+
+.subtitle{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 15pt;
+    border-style: solid;
+    padding: 10pt;
+    border-radius:20pt;
+}
+
+.subtitle:hover{
+    background-color: white;
+    color: black;
+    border-color: white;
+    transition: 0.5s;
+}

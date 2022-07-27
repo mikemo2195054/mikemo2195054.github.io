@@ -1,0 +1,21 @@
+.ablogincontent {
+    border-top: 1px solid purple;
+    padding: 15px;
+    margin: 20px;
+}
+
+.blogtitle {
+    text-decoration: none;
+    font-size: 40px;
+    line-height: 170%;
+    font-family: Verdana, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(88, 84, 36);
+}
+
+.blogabstract {
+    font-family: 'Trebuchet MS', sans-serif;
+}
