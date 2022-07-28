@@ -1,6 +1,8 @@
 .ablogincontent {
-    border-top: 1px solid purple;
+    border: 0px solid;
+    background-color: purple;
     padding: 15px;
+    border-radius: 10px;
     margin: 20px;
 }
 
@@ -9,13 +11,16 @@
     font-size: 40px;
     line-height: 170%;
     font-family: Verdana, sans-serif;
+    padding: 15px;
 }
 
 a{
     text-decoration: none;
-    color: rgb(88, 84, 36);
+    color: rgb(227, 224, 182);
 }
 
 .blogabstract {
     font-family: 'Trebuchet MS', sans-serif;
+    padding: 15px;
+    color: rgb(255,255,255);
 }

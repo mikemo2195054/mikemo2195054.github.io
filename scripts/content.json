@@ -2,6 +2,7 @@ content='[\
     {\
         "title": "My First Blog",\
         "abstract": "This is my first blog. Click the title to enter.",\
-        "location": "posts/myfirstblog.md"\
+        "location": "posts/myfirstblog.md",\
+        "color": "rgb(10,5,60)"\
     }\
 ]'
