@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>ARC 145</title>
+
+    <link rel="stylesheet" href="/css/blogpost.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+</head>
+
+<body>
+    <h1 class="title">ARC 145</h1>
+    <p>This morning, I participated in AtCoder Regular Contest 145 and here's my solutions and feelings about the contest.</p>
+    
+    <h1>A</h1>
+    <p><a href="https://atcoder.jp/contests/arc145/tasks/arc145_a">Problem Link</a>.</p>
+    <p>It takes me a lot of time to find the properties of the problem, and I finally found that if the last letter is \(\texttt{A}\), I can change all the previous letters to \(\texttt{ABB...B}\)</p> to make it a palindrome. If both the first and the last letter is \(\texttt{B}\), I can change the string \(\texttt{B****B}\) to \(\texttt{BAA...AB}\) and it's also a palindrome.</p>
+    <p>Therefore, the only impossible case is when \(S_1=\texttt{A}\) and \(S_n=\texttt{B}\), but I missed a special case so I got a penalty: when \(n=2\), the answer is yes if and only if \(S_1=S_2\).</p>
+
+    <h1>B</h1>
+    <p>I thought the answer when \(a\geq n\) and \(a\ < b\) is \[b\left(\left\lfloor\frac{n+1}{a}\right\rfloor+1\right)+\min\{\left(n+1\right)\bmod a,b\}\] and I thought it was fake, after the end of the contest, I sent a post for help and found that I accidently wrote an \(\texttt{if}\) instead of \(\texttt{else if}\), and my formula is correct. </p>
+
+    <h1>C</h1>
+    <p>I found a property in the contest that for each \(2\nmid x\), \(x\) must match \(x+1\), and I was stucked in calculating the number of ways to satisfy it.</p>
+</body>
+
+</html>
