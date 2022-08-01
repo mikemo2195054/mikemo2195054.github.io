@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <title>Codeforces Round 811 (Div. 3)</title>
+
+    <link rel="stylesheet" href="/css/blogpost.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+</head>
+
+<body>
+    <h1 class="title">ARC 145</h1>
+    <p>This morning, I participated in Codeforces Round 811 (Div. 3). Although it is a hard div. 3, I felt very good because I performed well in the contest.</p>
+    
+    <h1>A</h1>
+    <p><a href="https://codeforces.com/contest/1714/problem/A">Problem Link</a>.</p>
+    <p>
+        Turn all "hours and minutes" into only "minutes" so that it became a problem of numbers and it's very easy. If the next alarm is on the next day, plus 1440 and it's done.
+    </p>
+    
+    <h1>B</h1>
+    <p><a href="https://codeforces.com/contest/1714/problem/B">Problem Link</a>.</p>
+    <p>
+        Scan the array backward, found the first repeated element and output its index and it's done.
+    </p>
+
+    <h1>C</h1>
+    <p><a href="https://codeforces.com/contest/1714/problem/C">Problem Link</a>.</p>
+    <p>
+        Output \(\texttt{987...}\) until it's not enough. Very happy to pass in 6 minutes.
+    </p>
+
+    <h1>D</h1>
+    <p><a href="https://codeforces.com/contest/1714/problem/D">Problem Link</a>.</p>
+    <p>
+        It might work using greedy, but I thought there were too many codes, so I skipped it and turned to E.
+    </p>
+
+    <h1>E</h1>
+    <p><a href="https://codeforces.com/contest/1714/problem/E">Problem Link</a>.</p>
+    <p>
+        I drawed this figure of how the number in the one's digit change while doing multiplication and it's very helpful to my thought.
+        <img src="/img/postimg/cfr811-sole.png"></img>
+    </p>
+    <p>
+        After that, I found that if for each \(1\leq x\leq n\), \(a_x\bmod 10\neq 5\) and \(a_x\bmod 10\neq 0\), than go to the next step: for each \(x\) that \(a_x\bmod 10=\) 1 or 2 or 4 or 8, \(\left\lfloor\frac{a_x}{10}\right\rfloor\bmod 2\) must all be equal, so as that \(a_x\bmod 10=\) 3 or 6 or 7 or 9, and the two value must be different.
+    </p>
+    <p>
+        If for each \(1\leq x\leq n\), \(a_x\bmod 10=5\) or \(a_x\bmod 10=0\), if the \(x\) that satisfies \(a_x\bmod 10=0\) are all the biggest, then the answer is \(\texttt{Yes}\).
+    </p>
+    <p>
+        But it failed.
+    </p>
+
+    <h1>F</h1>
+    <p><a href="https://codeforces.com/contest/1714/problem/F">Problem Link</a>.</p>
+    <p>
+        Consider connecting all of 1, 2 and 3 to 4, suppose \(d_{14}=x, d_{24}=y\) and \(d_{34}=z\), than \(x, y, z\) must satisfy
+        \[\begin{cases}
+        x+y=d_{12}\\
+        y+z=d_{13}\\
+        x+z=d_{23}\\
+        \end{cases}\]
+    </p>
+    <p>
+        Solve the equation and it's possible if \(x, y, z\geq 0\) and they are all integers. There are at most 1 of them equal to 0, so replace it with 4 if something equal to 0.
+    </p>
+</body>
+
+</html>
