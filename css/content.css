@@ -1,26 +1,28 @@
-.ablogincontent {
+.apostentry {
     border: 0px solid;
-    background-color: purple;
-    padding: 15px;
+    padding: 30px 30px;
     border-radius: 10px;
     margin: 20px;
+}
+
+.apostentry:hover{
+    padding: 60px 30px;
+    transition: 0.5s;
 }
 
 .blogtitle {
     text-decoration: none;
     font-size: 40px;
-    line-height: 170%;
     font-family: Verdana, sans-serif;
-    padding: 15px;
 }
 
 a{
     text-decoration: none;
-    color: rgb(227, 224, 182);
+    color: darkslateblue;
 }
 
 .blogabstract {
     font-family: 'Trebuchet MS', sans-serif;
-    padding: 15px;
-    color: rgb(255,255,255);
+    padding-top: 15px;
+    color: rgb(28, 2, 42);
 }
