@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Codeforces Round 811 (Div. 3)</title>
+
+    <link rel="stylesheet" href="/css/blogpost.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+</head>
+
+<body>
+    <h1 class="title">Some Unsolved Problems Recently</h1>
+    <p>Recently, I've joined Educational Codeforces Round 133, AtCoder Beginner Contest 263 and Codeforces Round 812 (Div. 2). Here are my feelings and solutions of some unsolved problems.</p>
+    
+    <h1>ECR133 - C</h1>
+    <p><a href="https://codeforces.com/problemset/problem/1716/C">Problem Link</a>.</p>
+    <p>
+        At the beginning, I thought there were only two move: clockwise and counterclockwise, after I saw that I could actually end at any point, I found that there were one more way: move up, right, down, right, up, right...like a zigzag. So I calculated the minimum answer of the three ways and get a WA. After that, I found that I can combine way 3 and way 1 or way 2, so the problem became "to find a point to change ways". I found that the point with the largest \(a\) must be the last one to visit, so it must change ways before this largest value. However, I found the method very difficult and still didn't pass it.
+    </p>
+
+    <h1>CFR812 - D</h1>
+    <p>
+        This is the second interaction problem I passed, but not in the contest.
+    </p>
+    <p>
+        We can make only no more than \(\lceil\frac{1}{3}2^{n+1}\rceil\) queries, but there are \(2^n\) participants. So we should find a way to ask less queries and get more information. I found that I can get the winner of 4 people in 2 queries instead of 3 in brute force: Ask two people that are not in the same game in the first round, no matter what the result is, there are always two possible people to win. Suppose the people we ask is 1,2,3,4 and ask 1,4 first. If 1 wins more, the possible winners are 1 and 3; if 4 wins more, the possible winners are 2 and 4; If they are the same, the possible winners are 2 and 3.
+    </p>
+    <p>
+        The method is correct, but I make a mistake that I wrote "return in;" instead of "return (in==1 ? a : b);", and this is the only mistake that cause the WA.
+    </p>
+    
+</body>
+
+</html>
