@@ -3,7 +3,7 @@
 <head>
     <title>Fast Fourier Transform Study Notes</title>
 
-    <link rel="stylesheet" href="/css/blogpost.css">
+    <link rel="stylesheet" href="../../css/blogpost.css">
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
@@ -15,9 +15,52 @@
     
     <h1>Pre-knowledge: Root of Unity</h1>
     <p>
-        When we are solving for \(x\) in equation \(x^n=1\), we can get \(n\) roots. The roots is called "Root of Unity". They are called \(\omega_n^1\), \(\omega_n^2\) and so on. To get them, consider a unit circle in complex plane like the figure below. 
-        <img src="/img/postimg/fft-note-1.png" width="150pt"></img>
+        When we are solving for \(x\) in equation \(x^n=1\), we can get \(n\) roots. The roots is called "Root of Unity". They are called \(\omega_n^1\), \(\omega_n^2\) and so on. To get them, consider a unit circle in complex plane like the figure below. Then the root of unity is all the intersections between the segments and the circle, because if we raised one of them to the power of \(n\), we get 1.
     </p>
+    <center>
+        <img src="../../img/postimg/fft-note-1.png" width="70%"></img>
+    </center>
+    <p>
+        Connect all the Roots of Unity and we can find that they divided the circle into \(n\) pieces, so we can find that 
+        \[\angle\theta = \frac{360^{\circ}}{n}\]
+        Then we got 
+        \[\omega_n^1 = \cos\theta+i\sin\theta = \cos\frac{360^{\circ}}{n}+i\sin\frac{360^{\circ}}{n}\]
+        by drawing a vertical line and using the trigonometric functions.
+    </p>
+    <p>
+        Suppose each arithmetic operation in a complex plane is an operation to a vector, then multiply x by \(omega_n^1\) can be considered as rotating \(\vec{x}\), which conncts from the origin to \(x\) in the complex plane, by \(\theta\) degrees that is \(\frac{360^{\circ}}{n}\) degrees.
+    </p>
+    <p>
+        We can get that \[ \omega_n^i = \left(\omega_n^1\right)^n \]
+        More generally, we can also get that \[ \omega_n^{xy} = \left(\omega_n^x\right)^y \]
+    </p>
+    <p>
+        So far, we can get all the Roots of Unity for a certain \(n\). Now we should also find other properties of Root of Unity.
+    </p>
+    <ol>
+        <li class="odd">
+            \[ \omega_{kx}^{ky}=\omega_{x}^{y} \]
+            Because the arguments of them are the same. (\(\frac{360^{\circ}y}{x} = \frac{360^{\circ}ky}{kx}\))
+        </li>
+        <center>
+            <HR style="margin: 20pt 15pt 20pt -15pt" width="100%" color=#987cb9 SIZE=1>
+        </center>
+        <li class="even">
+            When \(x\) is divisble by 2, 
+            \[ \omega_n^a\omega_n^b=\omega_n^{a+b} \]
+            Because rotating the unit vector point at right with \(\frac{360^{\circ}a}{n}\) and another \(\frac{360^{\circ}b}{n}\) is equal to ratating it with \(\frac{360^{\circ}(a+b)}{n}\).
+        </li>
+        <center>
+            <HR style="margin: 20pt 15pt 20pt -15pt" width="100%" color=#987cb9 SIZE=1>
+        </center>
+        <li class="odd">
+            When \(x\) is divisble by 2, 
+            \[ \omega_n^{x+\frac{n}{2}}=-\omega_n^x \]
+            Because
+            \[ \omega_n^{x+\frac{n}{2}}=\omega_n^x\omega_n^{\frac{n}{2}} \]
+            and rotate a number in a complex plane by \(180^{\circ}\) is equivalent to getting the opposite number of it.
+        </li>
+    </ol>
 </body>
 
 </html>

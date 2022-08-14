@@ -11,3 +11,13 @@ h1.title{
     text-align: center;
     color: darkblue;
 }
+
+li.odd{
+    color: rgb(0, 58, 139);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+li.even{
+    color: rgb(53, 0, 139);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
