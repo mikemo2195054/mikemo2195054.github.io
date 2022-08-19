@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Some unsolved problems (ABC264, CFR815)</title>
+
+    <link rel="stylesheet" href="../../css/blogpost.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+</head>
+
+<body>
+    <h1 class="title">Some unsolved problems (ABC264, CFR815)</h1>
+    <p>
+        Recently, I've joined AtCoder Beginner Contest 264 and Codeforces Round 815 (Div. 2). Here's some unsolved or almost-solved problems I've met.
+    </p>
+
+    <h1>ABC264 - E</h1>
+    <p>
+        This is another graph theory problem. It's very difficult to maintain the deletion of edges, so we can consider
+        reversing the operation order of the peoblem.
+    </p>
+    <p>
+        Then the problem became to addition of edges. Then we can use Union Find to solve it.
+    </p>
+
+    <h1>CFR815 - C</h1>
+    <p>
+        I was always thinking about which place to put a "corner", but actually we don't need to do that. We can find that as long as we have two adjacent 0s, we can put a "corner" and remove an adjacent 1. So we can first determine whether there are two adjacent 0s. If there are, the answer is the number of 1s. Otherwise, Find a place with minimum 1s, remove it, and the answer is the remaining number of 1s plus 1.
+    </p>
+</body>
+
+</html>
