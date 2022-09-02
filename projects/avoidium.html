@@ -1,0 +1,174 @@
+<html>
+
+<head>
+    <title>Avoidium</title>
+</head>
+
+<body>
+    <canvas style="border: 1px solid black;" id="avoidium" width="600" height="600"></canvas>
+    <script>
+        const NGRID = 50;
+
+        canvas = document.getElementById("avoidium");
+        ctx = canvas.getContext('2d');
+        szC = 0; szU = 0;
+
+        // define color array
+        var a = new Array(NGRID + 5);
+        for (i = 1; i <= NGRID; i++)
+            a[i] = new Array(NGRID + 5);
+        for (i = 1; i < +NGRID; i++)
+            for (j = 1; j <= NGRID; j++)
+                a[i][j] = "white";
+
+        // automatic resize
+        window.addEventListener("resize", resizeCanvas, false);
+        function resizeCanvas() {
+            if (window.innerWidth < window.innerHeight)
+                szC = canvas.width = canvas.height = window.innerWidth - 20;
+            else
+                szC = canvas.width = canvas.height = window.innerHeight - 20;
+            szU = szC / NGRID;
+            fill();
+        }
+
+        //draw
+        function drawacell(y, x, clr) {
+            ctx.fillStyle = clr;
+            ctx.fillRect(szU * (x - 1), szU * (y - 1), szU, szU);
+        }
+
+        function fill() {
+            for (i = 1; i <= NGRID; i++)
+                for (j = 1; j <= NGRID; j++)
+                    drawacell(i, j, a[i][j]);
+        }
+
+        //main charactor
+        class MainChar {
+            constructor() {
+                this.x = NGRID / 2;
+                this.y = NGRID / 2;
+                a[this.x][this.y] = "green";
+            }
+
+            moveUp() {
+                if (this.x > 1) {
+                    a[this.x][this.y] = "white";
+                    this.x--;
+                    a[this.x][this.y] = "green";
+                    fill();
+                }
+            }
+
+            moveDown() {
+                if (this.x < NGRID) {
+                    a[this.x][this.y] = "white";
+                    this.x++;
+                    a[this.x][this.y] = "green";
+                    fill();
+                }
+            }
+
+            moveLeft() {
+                if (this.y > 1) {
+                    a[this.x][this.y] = "white";
+                    this.y--;
+                    a[this.x][this.y] = "green";
+                    fill();
+                }
+            }
+
+            moveRight() {
+                if (this.y < NGRID) {
+                    a[this.x][this.y] = "white";
+                    this.y++;
+                    a[this.x][this.y] = "green";
+                    fill();
+                }
+            }
+        }
+
+        //keyboard operation
+        mainchar = new MainChar();
+        document.addEventListener('keydown', function (event) {
+            if (event.keyCode == 37) {
+                mainchar.moveLeft();
+            }
+            if (event.keyCode == 38) {
+                mainchar.moveUp();
+            }
+            if (event.keyCode == 39) {
+                mainchar.moveRight();
+            }
+            if (event.keyCode == 40) {
+                mainchar.moveDown();
+            }
+        });
+
+        //enemy
+        class Enemy {
+            constructor() {
+                this.x = Math.ceil(Math.random() * NGRID);
+                this.y = Math.ceil(Math.random() * NGRID);
+                a[this.x][this.y] = "red";
+                fill();
+            }
+
+            approach() {
+                var ud = this.x - mainchar.x;
+                var lr = this.y - mainchar.y;
+
+                if (Math.abs(ud) > Math.abs(lr)) {
+                    if (ud > 0) {
+                        if (this.x < NGRID) {
+                            a[this.x][this.y] = "white";
+                            this.x++;
+                            a[this.x][this.y] = "red";
+                            fill();
+                        }
+                    }
+                    else if (ud < 0) {
+                        if (this.x > 1) {
+                            a[this.x][this.y] = "white";
+                            this.x--;
+                            a[this.x][this.y] = "red";
+                            fill();
+                        }
+                    }
+                }
+                else {
+                    if (lr > 0) {
+                        if (this.y > 1) {
+                            a[this.x][this.y] = "white";
+                            this.y--;
+                            a[this.x][this.y] = "red";
+                            fill();
+                        }
+                    }
+                    else {
+                        if (this.y < NGRID) {
+                            a[this.x][this.y] = "white";
+                            this.y++;
+                            a[this.x][this.y] = "red";
+                            fill();
+                        }
+                    }
+                }
+            }
+        };
+
+        //main game
+        function startgame() {
+            setInterval(function () {
+                ene = new Enemy();
+                setInterval(ene.approach,100);
+            }, 3000);
+        }
+
+        resizeCanvas();
+        startgame();
+    </script>
+</body>
+
+</html>

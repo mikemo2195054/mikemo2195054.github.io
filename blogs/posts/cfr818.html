@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>Codeforces Round 818 (Div. 2)</title>
+
+    <link rel="stylesheet" href="../../css/blogpost.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+</head>
+
+<body>
+    <h1 class="title">Codeforces Round 818 (Div. 2)</h1>
+    <p>Recently, I've joined Codeforces Round 818 (Div. 2). The round contains a lot of good math problem. Here's my feelings and solutions of them.</p>
+
+    <h1>A</h1>
+    <p>
+        If a pair of integers \( (a,b) \) satisfies \( \frac{\text{lcm(a,b)}}{\gcd(a,b)}\leq 3 \), one of \(a=b\), \(a=2b\), \(a=3b\), \(b=2a\), \(b=3a\) must be satisfied. 
+    </p>
+    <p>
+        e.g. if \( a=\frac{3}{2}b \), assume \(a=3k\), \(b=2k\), then \( \frac{\text{lcm(a,b)}}{\gcd(a,b)}=\frac{6k}{k}=6>3 \).
+    </p>
+    <p>
+        Then, the answer is obviously 
+        \[ n+2\left(\left\lfloor\frac{n}{2}\right\rfloor+\left\lfloor\frac{n}{3}\right\rfloor\right) \]
+    </p>
+    <h2>B</h2>
+    <p>
+        Let's first ignore the limit of \(r\) and \(c\), and we can output \(\texttt{X}\) at \((x,y)\) if 
+        \[x\bmod k=y\bmod k\]
+        Then add the limit of \((r,c)\), we can get that we can output \(\texttt{X}\) at \((x,y)\) if 
+        \[y\bmod k-c\bmod k+k\equiv (x-1)\bmod k-r\bmod k+k+1\pmod k\]
+    </p>
+</body>
+
+</html>
