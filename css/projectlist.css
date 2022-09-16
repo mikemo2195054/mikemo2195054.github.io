@@ -1,0 +1,13 @@
+.aproject{
+    background-color: wheat;
+    padding: 25px 15px 15px 20px;
+    margin: 5px 70px;
+    border-radius: 10pt;
+}
+
+a.projlink{
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20pt;
+}
+

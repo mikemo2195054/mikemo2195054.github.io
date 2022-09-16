@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <title>Hold</title>
+</head>
+
+<body>
+    <canvas style="border: 1px solid black;" id="hold" width="600" height="600"></canvas>
+    <script>
+        //resize canvas
+        canvas=document.getElementById("hold");
+        window.addEventListener("resize", resizeCanvas, false);
+        function resizeCanvas() {
+            canvas.width = window.innerWidth - 20;
+            canvas.height = window.innerHeight - 20;
+        }
+        resizeCanvas();
+    </script>
+</body>
+
+</html>
