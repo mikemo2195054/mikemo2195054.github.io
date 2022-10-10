@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Good News: I Successfully Solved Div.2 C</title>
+
+    <link rel="stylesheet" href="../../css/blogpost.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+</head>
+
+<body>
+    <h1 class="title">Good News: I Successfully Solved Div.2 C</h1>
+    <p>Today, I participated in Codeforces Round 826 (Div. 2), and successfully solved my first Div. 2 C.</p>
+    <h1><a href="https://codeforces.com/problemset/problem/1736/C1">Problem</a></h1>
+    <p>
+        Given an array \(a\) with length \(n\). Find the number of pairs \((l,r)\) satisfying \(\forall l\leq i\leq r, a_i\geq i-l+1\).
+    </p>
+    <h1>Solution</h1>
+    <p>
+        The simplist way we thought is using brute force with time complexity of \(O(n^3)\). Enumerate each pairs and use \(O(n)\) time to see if it's legal.
+    </p>
+    <p>
+        Then, we can easily think of a way of optimization: using Incremental Update. Since we only need to judge if every element is greater than or equal to \(l\), we can fix \(l\) and enumerate \(r\). When it's the first time that \( a_r < l \), add \(r-l\) to the answer. The time complexity now is \(O(n^2\).
+    </p>
+    <p>
+        However, to fit in the time limit of the problem, we need to optimize further. After fixing \(l\), we can use binary search. Then the problem became to judge if \((l,r)\) is legal. To do this, we only need to know if \(\min_{l\leq i\leq r} a_i\) is greater than or equal to \(a_l\).
+    </p>
+    <p>
+        We can use segment tree, the time complexity is \(O(n\log n)\) for preprocess and \(O(n\log^2 n)\) for queries, but this still exceed the time limit, so we should consider using sparse table, then the time complexity became \(O(n\log n)\) for preprocess and \(O(n\log n)\) for queries.
+    </p>
+</body>
