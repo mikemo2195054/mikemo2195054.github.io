@@ -19,6 +19,69 @@
     \[
     \forall n\in\mathbb{Z}^+,\ \frac{10^{2n+2}-1}{9}+10^{n}=\frac{10^{n+1}-1}{9}(10^n+1)
     \]
+    Therefore nothing is prime.
+
+    <h1><a href="https://artofproblemsolving.com/wiki/index.php/2022_AMC_10B_Problems/Problem_9">
+        Problem 9
+    </a></h1>
+    Then, I stuck again at problem 9: Find
+    \[
+    \frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\dots+\frac{2021}{2022!}
+    \]
+    I tried many ways to transform the equation, and get itself in the end, so I gave up at the problem. Until I saw the solution: Note that 
+    \[
+    \frac{n}{(n+1)!} = \frac{1}{n!} - \frac{1}{(n+1)!}
+    \]
+    after that the problem can be easily solved.
+
+    Both solutions of the problem aren't very long, but they both need a discovery. I didn't discovered these things, so I failed to solve these problems.
+
+    <h1><a href="https://artofproblemsolving.com/wiki/index.php/2022_AMC_10B_Problems/Problem_12">
+        Problem 12
+    </a></h1>
+    It finally came to my favorite probability problem. I easily found that rolling a pair of fair $6$-sided dice, the probability of getting a sum of $7$ is $\frac16$. The probability of not getting a sum of $7$ is $1-\frac16=\frac56.$ Rolling the pair of dice $n$ times, the probability of getting a sum of $7$ at least once is 
+    \[
+    1-\left(\frac56\right)^n.
+    \] 
+    Therefore, we have 
+    \[
+    1-\left(\frac56\right)^n>\frac12,
+    \]
+    so the smallest value of $n$ is 4.
+
+    <h1><a href="https://artofproblemsolving.com/wiki/index.php/2022_AMC_10B_Problems/Problem_15">
+        Problem 15
+    </a></h1>
+
+    This is another problem that I stuck at. I uses formula
+    \[
+    S_n = \frac{(a_1+a_n)n}{2},
+    \]
+    but I incorrectly used the formula 
+    \[
+    n=\frac{a_n-a_1}{d}+1,
+    \]
+    so I gave up after getting a lot of difficult stuff.
+
+    Actually I only need to find that $S_{n}$ is $n(a + n - 1) = n^2 + n(a - 1)$. Then I only need to find 
+    \[
+    \frac{S_{3n}}{S_{n}} = \frac{9n^2 + 3n(a - 1)}{n^2 + n(a - 1)} = 9 - \frac{6n(a-1)}{n^2 + n(a-1)}.
+    \]
+    then it can be easily solved.
+
+    <h1>
+        Problem 16 to 25
+    </h1>
+    I completely don't know how to do these, so I gave up all of these problems.
+
+    <h1>
+        Summary
+    </h1>
+    I predict to get about 
+    \[
+    11\times 6+14\times 1.5=87
+    \]
+    points.
 </body>
 
 </html>
