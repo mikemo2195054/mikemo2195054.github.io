@@ -6,3 +6,7 @@ categories: jekyll update
 ---
 
 I wrote a bunch of DP problems, and math competition experience did help a lot.
+
+$$x + 1$$
+
+haha $x$
