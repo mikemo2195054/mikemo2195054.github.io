@@ -2,7 +2,7 @@
 layout: post
 title:  "A Bunch of DP Problems"
 date:   2024-11-11 14:40:00 -0500
-categories: jekyll update
+categories: programming
 ---
 
 {% include mathjax.html %}
@@ -74,3 +74,25 @@ $$ f(h,y) = \sum_{\alpha = 1}^y a_{s_\alpha h} $$
 for all $k\leq h < 2k$. The time complexity can improve from $O(NM^2K)$ to $O(NM^2)$ by preprocessing
 
 $$ P(x,y) = \sum_{\alpha = 1}^x a_{s_\alpha y} $$
+
+
+
+# [(USACO 2016 December Platinum 2) Team Building](https://usaco.org/index.php?page=viewproblem2&cpid=673)
+
+We observe that since $K \leq 10$, the time complexity must have something to do with $K$. Let $f(x,y,z)$ be the number of ways if we choose $x$ cows, 
+the last cow Farmer John choose is $y$, and the last cow Farmer Paul choose is $z$. Then,
+
+$$ f(i,j,k) = [FJ_j > FP_k]\sum_{\alpha = 1}^{i - 1} \sum_{\beta = 1}^{j - 1} f(i-1,\alpha,\beta).$$
+
+This leads to a time complexity of $O(KN^4)$. However, if we let
+
+$$S(i,j,k) = \sum_{x=1}^j \sum_{y=1}^k f(i,x,y),$$
+
+then $f(i,j,k) = [FJ_j > FP_k] S(i-1,j-1,k-1)$, and
+
+$$S(i,j,k) = S(i,j-1,k) + S(i,j,k-1) - S(i,j-1,k-1) + f(i,j,k).$$
+
+The time complexity is reduced to $O(KN^2)$. Another important detail is that we need to modulo our answer by $10^9 + 9$, 
+so when subtraction is involved, we first need to add $10^9 + 9$ before modulo that number to prevent negative numbers. 
+While $S(i,j-1,k) + S(i,j,k-1)$ must be bigger than $S(i,j-1,k-1)$, the number after being moduloed might not, so we must remember to add $10^9 + 9$.
+
