@@ -33,8 +33,17 @@ Anything that has something to do with math is just a relaxation for me from wri
 
 I decided to continue participating in Science Olympiad club, and it sure has been super relaxing. I played some tennis with some of the teammates after the club activity on Thursday after school.
 
-I actually forgot another thing about math: Multivariable Calculus. If I am writing a formal essay, I would move this paragraph to a paragraph above it. My comment about this class is everything was good except for the things that are not good. The reason why the cuvature rate formula looks like 
+I also took Multivariable Calculus at UNH with 2 classmates in my school. My comment about this class is everything was good except for the things that are not good. The reason why the cuvature rate formula looks like 
 
 $$ \kappa = \left| \frac{d\overrightarrow{T}}{ds} \right| $$
 
 was my favorite thing in the class, although neither the professor nor the TA mentioned about it. I'm quite excited that I will prove a theorem about electric flux in the future in this class because that's exactly what I'm studying in physics.
+
+
+# Sports
+
+Team/Individual Sports was so fun. I played many sports with my classmates in this class, including Ryder, River and Jacob. At the beginning, we played flag football. I played this sport in EPW, but it's really fun to play it again with people who enjoy sports. We created a lot of fun memories through flag football, and it greatly trained my stamina by running.
+
+After flag football ends, we played softball. I remember I played the indoor version of it: stickball in 10th grade. It was also really fun except I had to wait for a long time tfor my bchance to hit, and my classmates can often easily catch my ball which made me out. However, being on the fielding team is fun and I caught some balls. It was really happy when the whole class cheered for me catching the ball.
+
+Recently, we played pickleball. With my tennis expereince, me and Cabet quickly became the champion of the whole class. It was also really happy.
