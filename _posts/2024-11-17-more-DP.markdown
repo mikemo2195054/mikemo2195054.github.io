@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "More DP Problems"
+categories: programming
+---
+
+{% include mathjax.html %}
+
+I did more DP problems. They are more tricky. Sometimes it's interesting but sometimes it just feel like I'm brainless.
+
+# [(CF 837D) Round Subset](https://codeforces.com/contest/837/problem/D)
+
+Notice this problem only relates to the amount of 2's and 5's in a number. Let $t_i$ be the amount of 2's, and $v_i$ be the amount of 5's in $a_i$, i.e.
+
+$$ a_i = 2^{t_i} \times 5^{v_i} \times C,$$
+
+where $t_i,v_i,C\in\mathbb{Z}$ and $t_i$ and $v_i$ are the maximum possible value. Let $f(x,c,w)$ be the maxinum possible number of 5's that can get with exactly $c$ numbers and $w$ 2's from $a_1$ to $a_x$. Then,
+
+$$ f(x,c,w) = \max\left\{ f(x-1,c,w), f(x-1,c-1,w-t_x) + v_x \right\}.$$
+
+Initially, $f(x,c,w) = -1$ for all $x,c,w$ except $f(0,0,0) = 0$, and if $f(x-1,c-1,w-t_x) = -1$, $f(x,c,w)$ will not transfer from it. The answer is
+
+$$ \max_{0\leq i\leq T} \left\{ \min\left\{ i,f(n,k,i) \right\} \right\},$$
+
+and we can use rolling array to reduce space complexity.
+
+# [(US Open 2018 Gold 3) Talent Show](https://usaco.org/index.php?page=viewproblem2&cpid=839)
+
+We observe that we don't want to choose too many cows as they can only keep or decrease the ratio, so we first do a normal knapsack problem then add another cow. Let $f(x,y)$ be the maxinum talent one can get if choosing from 1 to $x$ with a maximum of weight $y$, then
+
+$$ f(x,y) = \max \left\{ f(x-1,y), f(x-1,y-w_i)+t_i \right\}.$$
+
+The answer is
+
+$$ \max_{0\leq y\leq W} \max_{y + w_c \geq W} \left\{ \frac{f(N,y) + t_c}{y + w_c} \right\} $$
+
+# [(USACO 2021 January Gold 1) Uddered But Not Herd](https://usaco.org/index.php?page=viewproblem2&cpid=1089)
+
+At the beginning, since the absolute order of the letters doesn't matter, we can first discretize the letters to numbers from 1 to $w$. According to the data limitation, there are at most 20 letters, so let $f(B)$ be the answer if we only consider the bitmask $B$. Then,
+
+$$ f(B) = \min_{s\in B} \left\{ f(B\ \backslash\ \{s\}) + \sum_{x\in B} c_{s,x} \right\},$$
+
+where $c_{a,b}$ is the number of time letter $a$ is right before letter $b$. In the equation, we assume, under the choice of bitmask $B$, letter $s$ is the biggest, so if letter $s$ is right before some smaller other letters in $B$, then it means an increase of the number of times Mildred hums the cowphabet.
+
+# [(CSES 1653) Elevator Rides](https://cses.fi/problemset/task/1653/)
+
+Similar technique of bitmask DP with the last one. Let $f(B)$ be the minimum number of rides with choice of bitmask $B$, and $g(B)$ be the number of people in the last elevator ride in the case of $f(B)$. Then,
+
+$$(f(B),g(B)) = \min_{s\in B} 
+\begin{cases} 
+\left(f(B\ \backslash\ \{s\}),g(B\ \backslash\ \{s\}) + w_s \right) & g(B\ \backslash\ \{s\}) + w_s < x  \\
+\left(f(B\ \backslash\ \{s\}) + 1,w_s \right) & g(B\ \backslash\ \{s\}) + w_s > x 
+\end{cases}  $$
+
+where we set $(a,b) < (c,d)$ if and only if $a < c$ or $a = c$ and $b < d$. Initially, $f(0) = 0$ and $g(0) = x$, because any more people joining will cause $f(B)$ to plus one.
