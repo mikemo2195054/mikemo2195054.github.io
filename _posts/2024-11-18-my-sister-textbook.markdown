@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Interesting Thing Found on my Sister's Math Textbook"
-categories: life
+categories: math
 ---
 
 {% include mathjax.html %}

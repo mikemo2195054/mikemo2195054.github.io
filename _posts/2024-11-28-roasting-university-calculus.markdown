@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Roasting University Calculus by Hass, Heil, and a Bunch of Authers"
-categories: life
+categories: math
 ---
 
 {% include mathjax.html %}

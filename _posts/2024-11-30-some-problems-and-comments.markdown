@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Some Problems on my Math Textbook and My Personal Comment"
-categories: life
+categories: math
 ---
 
 {% include mathjax.html %}
