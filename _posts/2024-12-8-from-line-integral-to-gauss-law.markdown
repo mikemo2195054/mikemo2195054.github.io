@@ -241,8 +241,74 @@ $$ \vec{E} = \frac{k_e q}{r^2} \hat{r},$$
 
 where $\hat{r}$ is a unit vector with the direction from the charge to the point. Electric field of every points in space forms a vector field, and the surface integral of the electric field over a surface is called the **electric flux** of the surface. Formally, let $S$ be a surface, the electric flux of $S$ is
 
-$$ \iint_S \vec{E} \cdot \mathrm{d} \vec{A}.$$
+$$ \Phi_E = \iint_S \vec{E} \cdot \mathrm{d} \vec{A}.$$
 
 ## Chapter 5: Putting Everything Together -- Gauss's Law and its Proof
 
 If there is a charge $q$ in the origin in a 3D space. Let $S$ be a closed surface containing the origin, then Gauss's Law states that the electric flux of $S$ is $\frac{q}{\epsilon_0}$ regardless of the shape of $S$.
+
+**_Lemma 1: If $S$ is a sphere centered at the origin, then Gauss's Law is true._**
+
+**_Proof:_** In this case, $\vec{F}$ and $\mathrm{d} \vec{A}$ are parallel. so
+
+$$ \Phi_E = \iint_S \vec{E} \cdot \mathrm{d} \vec{A} = \iint_S E \ \mathrm{d} A = E \iint_S \ \mathrm{d} A = \frac{q}{4\pi\epsilon_0 r^2} \left( 4\pi r^2 \right) = \frac{q}{\epsilon_0}.$$
+
+<div style="text-align: right"><b> Q.E.D. </b></div>
+
+**_Lemma 2: For each point not in the origin, $\nabla \cdot \vec{E} = 0$._**
+
+**_Proof:_** Let $\rho = \sqrt{x^2 + y^2 + z^2}$. Since the point is not the origin, $\rho \neq 0$. Then
+
+$$ \vec{E} = \frac{q}{4\pi\epsilon_0 \rho^2} \left( \frac{x\hat{\imath} + y\hat{\jmath} + z\hat{k}}{\rho} \right) 
+= \frac{q}{4\pi\epsilon_0 \rho^3} \left(x\hat{\imath} + y\hat{\jmath} + z\hat{k}\right) $$
+
+Let $\vec{E} = M\hat{\imath} + N\hat{\jmath} + P\hat{k}$, then
+
+$$ M = \frac{q}{4\pi\epsilon_0 \rho^3} x $$
+
+Take the partial derivative, we get
+
+$$ \frac{\partial M}{\partial x} = \frac{q}{4\pi\epsilon_0} \left( -3x^2 \rho^{-5} + \rho^{-3} \right).$$
+
+Similarly,
+
+$$ \frac{\partial N}{\partial y} = \frac{q}{4\pi\epsilon_0} \left( -3y^2 \rho^{-5} + \rho^{-3} \right), 
+\quad \frac{\partial P}{\partial z} = \frac{q}{4\pi\epsilon_0} \left( -3z^2 \rho^{-5} + \rho^{-3} \right).$$
+
+Therefore,
+
+$$
+\begin{aligned}
+\nabla \cdot \vec{E} 
+&= \frac{q}{4\pi\epsilon_0} \left( -3x^2\rho^{-5} - 3y^2\rho^{-5} - 3z^2\rho^{-5} + 3\rho^{-3} \right) \\
+&= \frac{q}{4\pi\epsilon_0} \left( -3 \rho^2\rho^{-5} + 3\rho^{-3} \right) \\
+&= 0
+\end{aligned}
+$$
+
+<div style="text-align: right"><b> Q.E.D. </b></div>
+
+With the two lemmas above, we can prove the whole theorem. Let $D$ be the region bounded by $S$, and $D_0 \in D$ be a sphere centered at the origin bounded by $S_0$.  By Lemma 1, $(\Phi_E)_{S_0} = \frac{q}{\epsilon_0}$.
+
+Let $D_1 = D - D_0$ bounded by $S_1$. Then $D_1$ only contains points that are not the origin because the origin is in $D_0$. By Divergence Theorem,
+
+$$ (\Phi_E)_{S_1} = \iint_{S_1} \vec{E} \cdot \mathrm{d} \vec{A} = \iiint_{D_1} \nabla \cdot \vec{E} \ \mathrm{d} V. $$
+
+Since $\nabla \cdot \vec{E} = 0$ by Lemma 2, we have
+
+$$ \iiint_{D_1} \nabla \cdot \vec{E} \ \mathrm{d} V = \iiint_{D_1} 0 \ \mathrm{d} V = 0,$$
+
+so $(\Phi_E)_{S_1} = 0$. Therefore,
+
+$$
+\begin{aligned}
+\Phi_E &= \iint_S \vec{E} \cdot \mathrm{d} \vec{A} \\
+&= \iiint_D \nabla \cdot \vec{E} \cdot \mathrm{d} V \\
+&= \iiint_{D_0} \nabla \cdot \vec{E} \cdot \mathrm{d} V + \iiint_{D_1} \nabla \cdot \vec{E} \cdot \mathrm{d} V \\
+&= (\Phi_E)_{S_0} + (\Phi_E)_{S_1} \\
+&= \frac{q}{\epsilon_0} + 0 \\
+&= \frac{q}{\epsilon_0}
+\end{aligned} 
+$$
+
+and that's it! We've just proved an amazing theorem that the electric flux on a closed surface due to a point charge is unrelated to the shape of the surface. Gauss's Law is beautiful because it's simple but unintuitive.
