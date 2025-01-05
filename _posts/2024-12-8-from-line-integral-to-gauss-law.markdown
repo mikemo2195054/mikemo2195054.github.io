@@ -6,6 +6,8 @@ categories: math
 
 {% include mathjax.html %}
 
+[PDF version for better reading experience](/pdf/line-integral-gauss-law.pdf)
+
 Multivariable calculus is much more than ust calculus of more variables. There is an amazing connection between line integral and one of four greatest law of electromagnetism: Gauss's Law. In this article, we will start with the introduction of line integral, and eventually prove Gauss's Law.
 
 ## Chapter 0: Introduction
